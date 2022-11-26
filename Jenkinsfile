@@ -7,7 +7,6 @@ node {
         app = docker.build("geocoding:latest")
     }
     stage('Test') {
-        sh 'pytest --version'
         sh 'pytest --template=html/index.html --report=informe.html'
     }
     stage('Publish Unit Test results report') {

@@ -5,7 +5,8 @@ FROM python:3
 # Copiar el codigo fuente al directorio de trabajo
 COPY ./src/ /usr/src/proyecto
 WORKDIR /usr/src/proyecto
-
+COPY ./test/ /urs/src/test
+WORKDIR /usr/src/test
 
 # Instalar flask y sus dependencias.
 RUN python -m pip install --upgrade pip
