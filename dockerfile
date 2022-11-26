@@ -3,14 +3,9 @@ FROM python:3
 
 # Seleccionar el directorio donde trabajaremos
 # Copiar el codigo fuente al directorio de trabajo
-COPY ./src/ /usr/src/main
-WORKDIR /usr/main
-COPY ./src/ /usr/src/controllerGeolocationAutomatic
-WORKDIR /usr/controllerGeolocationAutomatic
-COPY ./src/ /usr/src/geolocationAutomatic
-WORKDIR /usr/geolocationAutomatic
-COPY ./src/ /usr/src/settings
-WORKDIR /usr/settings
+COPY ./src/ /usr/src/proyecto
+WORKDIR /usr/src/proyecto
+
 
 # Instalar flask y sus dependencias.
 RUN python -m pip install --upgrade pip
