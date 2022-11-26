@@ -6,13 +6,7 @@ node {
     stage('Build') {
         app = docker.build("geocoding:latest")
     }
-    stage('Publish Unit Test results report') {
-            steps {
-                echo 'Report'
-                publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: 'target/site/jacoco/', reportFiles: 'informe.html', reportName: 'jacaco report', reportTitles: ''])
-
-             }
-        }
+    
     
     stage('Deploy') {
         sh 'set'
