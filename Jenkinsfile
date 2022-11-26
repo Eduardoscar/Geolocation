@@ -7,11 +7,8 @@ node {
         app = docker.build("geocoding:latest")
     }
     stage('Test') {
-        withPythonEnv('python3'){
-            sh 'pip install pytest-reporter-html1'
-            sh 'pytest --template=html/index.html --report=informe.html'
-        }
-
+        sh 'pytest --template=html/index.html --report=informe.html'
+    }
     stage('Publish Unit Test results report') {
             steps {
                 echo 'Report'
@@ -19,7 +16,7 @@ node {
 
              }
         }
-    }
+    
     stage('Deploy') {
         sh 'set'
         sh 'docker stop geocoding || true && docker rm geocoding || true'
