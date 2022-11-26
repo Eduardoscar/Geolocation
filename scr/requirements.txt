@@ -1,0 +1,6 @@
+fastapi==0.81.0
+uvicorn==0.18.2
+starlette==0.20.4
+requests==2.27.1
+python-dotenv==0.20.0
+pytest-reporter-html1
