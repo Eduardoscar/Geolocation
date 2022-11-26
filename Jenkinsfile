@@ -8,6 +8,7 @@ node {
     }
     stage('Test') {
         withPythonEnv('python3'){
+            sh 'pip install pytest-reporter-html1'
             sh 'pytest --template=html/index.html --report=informe.html'
         }
 
